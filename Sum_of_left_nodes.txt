@@ -1,0 +1,21 @@
+int ans;
+void dfs(TreeNode *root) {
+        if(root) {
+            if(root->left) 
+            {
+                if(root->left->left == nullptr and root->left->right == nullptr)
+                 {
+                    ans =ans + root->left->val;
+                }
+                dfs(root->left); 
+            }
+            if(root->right) {
+                dfs(root->right);
+            }
+        }
+    }
+    int sumOfLeftLeaves(TreeNode* root) {
+         ans = 0;
+        dfs(root);
+        return ans;
+    }
